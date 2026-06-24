@@ -11,7 +11,7 @@ export function AboutSection() {
         <div className="grid md:grid-cols-[auto_1fr] gap-8 items-start">
           <Polaroid caption="that's me :)" rotate={-3}>
             <img
-              src="/riya.jpg"
+              src="/portfolio/riya.jpg"
               alt={profile.name}
               className="w-full h-full object-cover"
             />
