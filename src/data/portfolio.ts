@@ -143,9 +143,9 @@ export const certificates = [
 ];
 
 export const contact = {
-  linkedin: "https://linkedin.com/in/riyatyagi",
-  github: "https://github.com/riyatyagi",
-  email: "riya.tyagi@example.com",
+  linkedin: "https://www.linkedin.com/in/riya-tyagi-549869327/",
+  github: "https://github.com/ri-ty",
+  email: "riyatyagi20007@gmail.com",
   resume: "/resume.pdf",
 };
 
@@ -155,6 +155,7 @@ export const navTabs = [
   { id: "projects", label: "Projects" },
   { id: "internships", label: "Internships" },
   { id: "startup", label: "Startup Lab" },
+  { id: "desk", label: "The Desk" },
   { id: "certificates", label: "Certificates" },
   { id: "fun", label: "Fun Page" },
   { id: "contact", label: "Contact" },

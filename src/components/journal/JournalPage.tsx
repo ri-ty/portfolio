@@ -41,13 +41,14 @@ export function WashiTape({ color, className = "" }: { color: string; className?
 }
 
 export function StickyNote({
-  children, color = "yellow", rotate = -1, className = "", jiggle = false,
+  children, color = "yellow", rotate = -1, className = "", jiggle = false, tiltOnHover,
 }: {
   children: ReactNode;
   color?: "yellow" | "pink" | "lavender" | "mint" | "peach";
   rotate?: number;
   className?: string;
   jiggle?: boolean;
+  tiltOnHover?: number;
 }) {
   const colors = {
     yellow: "sticky-note", pink: "sticky-note sticky-note-pink",
@@ -58,7 +59,9 @@ export function StickyNote({
     <motion.div
       className={`${colors[color]} p-3 md:p-4 rounded-sm ${className}`}
       style={{ transform: `rotate(${rotate}deg)` }}
-      whileHover={jiggle ? { rotate: [rotate, rotate + 2, rotate - 2, rotate], transition: { duration: 0.4 } } : { rotate: rotate + 0.5 }}
+      whileHover={jiggle
+        ? { rotate: [rotate, rotate + 2, rotate - 2, rotate], transition: { duration: 0.4 } }
+        : { rotate: rotate + (tiltOnHover ?? 0.5) }}
     >
       {children}
     </motion.div>
