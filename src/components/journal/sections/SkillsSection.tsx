@@ -87,7 +87,7 @@ function SkillCheckItem({ name, note }: { name: string; note: string }) {
 function NotebookBox({ title, children, highlight }: { title: string; children: React.ReactNode; highlight?: boolean }) {
   return (
     <motion.div
-      className={`rounded-sm border p-4 ${
+      className={`relative rounded-sm border p-4 ${
         highlight
           ? "bg-peach/25 border-peach/50"
           : "bg-white/40 border-ink/[0.06]"
@@ -109,6 +109,7 @@ export function SkillsSection() {
     <JournalPage id="skills" noHeader>
       <div className="relative">
         <Doodle className="absolute -top-1 right-2 rotate-3 hidden sm:block">⭐</Doodle>
+        <Doodle className="absolute top-16 -left-1 -rotate-6 hidden md:block text-ink/20">built over the years ~</Doodle>
 
         <SectionHeading>Skills</SectionHeading>
 
@@ -123,8 +124,12 @@ export function SkillsSection() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="relative">
             <WashiTape color="#F8D7DD" className="w-24 mb-3" />
+            <svg className="absolute -top-1 left-8 w-3.5 h-3.5 text-ink/20 rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+              <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
+              <rect x="8" y="2" width="8" height="4" rx="1" />
+            </svg>
             <h3 className="handwritten text-xl text-ink/50 mb-4">Professional Skills</h3>
             <ul className="space-y-1">
               {professionalSkills.map((s) => (
@@ -172,7 +177,8 @@ export function SkillsSection() {
         {/* Section 5 & 6 — Workflow + Current Focus */}
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           <NotebookBox title="Daily Workflow">
-            <div className="flex flex-col items-center py-2">
+            <Doodle className="absolute top-3 right-3 hidden sm:block">💡</Doodle>
+            <div className="flex flex-col items-center py-2 relative">
               {workflowSteps.map((step, i) => (
                 <div key={step} className="flex flex-col items-center">
                   <span className="handwritten text-base text-ink/65 px-3 py-1 rounded-sm bg-lavender/20 border border-lavender/30">
